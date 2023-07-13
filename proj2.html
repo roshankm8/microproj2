@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>microproj2</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Delius+Unicase&family=Inter:wght@400;600;700&family=Roboto:wght@500&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Delius+Unicase&family=Inter:wght@400;600;700&family=Roboto:wght@500&display=swap");
+    </style>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .navbar {
+            height: 90px;
+            width: 1902px;
+            background-color: rgba(111, 106, 247, 1);
+            display: flex;
+            position: sticky;
+            top: 0px;
+        }
+        
+        #para {
+            font-size: 41px;
+            font-weight: 700;
+            line-height: 79px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: rgba(255, 255, 255, 1);
+            font-family: "Delius Unicase", cursive;
+            margin-left: 16px;
+        }
+        
+        #mid {
+            font-family: "DM Sans", sans-serif;
+            font-size: 22px;
+            font-weight: 200;
+            margin-top: -70px;
+            margin-left: 550px;
+            display: flex;
+        }
+        
+        #mid a {
+            padding: 20px;
+        }
+        
+        a {
+            color: rgba(255, 255, 255, 1);
+            text-decoration: none;
+        }
+        
+        input[type="search"] {
+            border-radius: 50px;
+            height: 40px;
+            width: 300px;
+        }
+        
+        .search {
+            margin-top: 18px;
+            margin-left: 40px;
+        }
+        
+        .magni {
+            margin-left: 260px;
+            margin-top: -34px;
+        }
+        
+        #burger {
+            margin-top: -45px;
+            margin-left: 1860px;
+            position: relative;
+        }
+        
+        #burger img {
+            cursor: pointer;
+        }
+        
+        .box2 {
+            display: flex;
+            flex-direction: row;
+            height: 300px;
+            margin-left: 38px;
+        }
+        
+        .img1 {
+            margin-top: 70px;
+            margin-left: 20px;
+        }
+        
+        .img2 {
+            border: 6px solid rgba(255, 255, 255, 1);
+            box-shadow: 3px 5px 27px 0px rgba(0, 0, 0, 0.25) inset;
+            color: rgba(111, 115, 115, 1);
+            background: linear-gradient(0deg, #E5D8FF, #E5D8FF), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+            width: 1300px;
+            height: 300px;
+            border-radius: 20px;
+            border: 6px;
+            font-family: DM Sans;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 46px;
+            letter-spacing: 0em;
+            margin-left: 100px;
+            margin-top: 70px;
+        }
+        
+        .img2 pre {
+            margin-left: 25px;
+        }
+        
+        .img1 img {
+            box-shadow: 4px 7px 32px 0px rgba(0, 0, 0, 0.44);
+            border-radius: 20px;
+        }
+        
+        .socials {
+            position: absolute;
+            margin-top: 25vh;
+            right: 1px;
+            height: 100vh;
+        }
+        
+        .icons {
+            /* display: flex;
+            flex-direction: column;
+            width: 70px;
+            height: 170px;
+            margin-top: 140px;
+            margin-left: 700px;
+            position: sticky; */
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 90px;
+        }
+        
+        .whats {
+            box-sizing: border-box;
+            width: 48px;
+            height: 48px;
+            border: 2px solid rgba(0, 0, 0, 1);
+            color: linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #ffffff, #ffffff);
+            border-radius: 11px;
+            margin: 1px;
+        }
+        
+        .fb {
+            box-sizing: border-box;
+            width: 48px;
+            height: 48px;
+            border: 2px solid rgba(0, 0, 0, 1);
+            color: linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #ffffff, #ffffff);
+            border-radius: 11px;
+            margin: 1px;
+        }
+        
+        .twit {
+            box-sizing: border-box;
+            width: 48px;
+            height: 48px;
+            border: 2px solid rgba(0, 0, 0, 1);
+            color: linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #ffffff, #ffffff);
+            border-radius: 11px;
+            margin: 1px;
+        }
+        
+        .whats img {
+            margin-left: 2px;
+            margin-top: 2px;
+        }
+        
+        .fb img {
+            margin-left: 4px;
+            margin-top: 4px;
+        }
+        
+        .twit img {
+            margin-left: 4px;
+            margin-top: 7px;
+        }
+        
+        .cards {
+            display: flex;
+            flex-direction: row;
+            height: 250px;
+            width: 1900px;
+            margin-top: 160px;
+            justify-content: space-around;
+            font-family: DM Sans;
+            font-size: 29px;
+            font-weight: 700;
+            line-height: 35px;
+            letter-spacing: 0.04em;
+            text-align: left;
+            color: rgba(255, 255, 255, 1);
+        }
+        
+        #card1 {
+            width: 20%;
+            height: 180px;
+            background: rgba(146, 157, 255, 1);
+            box-shadow: 0px 9px 31px 0px rgba(0, 0, 0, 0.4);
+            border-radius: 18px;
+        }
+        
+        #card2 {
+            width: 20%;
+            height: 180px;
+            background: rgba(115, 76, 242, 1);
+            box-shadow: 0px 9px 31px 0px rgba(0, 0, 0, 0.4);
+            border-radius: 18px;
+        }
+        
+        #card3 {
+            width: 20%;
+            height: 180px;
+            background: rgba(210, 136, 255, 1);
+            box-shadow: 0px 9px 31px 0px rgba(0, 0, 0, 0.4);
+            border-radius: 18px;
+        }
+        
+        #card4 {
+            width: 20%;
+            border-radius: 18px;
+            height: 180px;
+            background: rgba(0, 0, 0, 1);
+            box-shadow: 0px 9px 31px 0px rgba(0, 0, 0, 0.4);
+        }
+        
+        #card1 p {
+            margin-top: 30px;
+            margin-left: 40px;
+        }
+        
+        #card2 p {
+            margin-top: 30px;
+            margin-left: 40px;
+        }
+        
+        #card3 p {
+            margin-top: 30px;
+            margin-left: 40px;
+        }
+        
+        #card4 p {
+            margin-top: 30px;
+            margin-left: 40px;
+        }
+        
+        .formcont {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .form {
+            background: rgba(72, 62, 255, 1);
+            width: 1700px;
+            height: 600px;
+            margin-top: 70px;
+            margin-left: 100px;
+            border-radius: 21px;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .support {
+            position: fixed;
+            margin-left: 1810px;
+            height: 100px;
+            width: 90px;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 4px 15px 35px 0px rgba(0, 0, 0, 0.25);
+            border-radius: 100px;
+            margin-top: 60px;
+        }
+        
+        .support img {
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+        
+        .details {
+            width: 810px;
+            height: 500px;
+            border-radius: 19px;
+            background: rgba(255, 255, 255, 1);
+            margin-top: 50px;
+            margin-left: 270px;
+        }
+        
+        .rect {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blocks {
+            width: 357px;
+            height: 113px;
+            border-radius: 22px;
+        }
+        
+        #blk1 {
+            background: rgba(188, 224, 246, 1);
+            box-shadow: 0px 6px 35px 0px rgba(0, 0, 0, 0.39);
+            margin-left: 200px;
+            margin-top: 65px;
+        }
+        
+        #blk2 {
+            background: rgba(72, 62, 255, 1);
+            border: 2px solid rgba(255, 255, 255, 1);
+            margin-left: 200px;
+            margin-top: 65px;
+        }
+        
+        #blk3 {
+            background: rgba(72, 62, 255, 1);
+            border: 2px solid rgba(255, 255, 255, 1);
+            margin-left: 200px;
+            margin-top: 65px;
+        }
+        
+        .info p {
+            font-family: Inter;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 46px;
+            letter-spacing: 0.105em;
+            text-align: left;
+            margin-top: 50px;
+            margin-left: 50px;
+            color: rgba(4, 40, 90, 1);
+        }
+        
+        .contact p {
+            font-family: Roboto;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            letter-spacing: 0.05em;
+            text-align: left;
+            color: rgba(20, 53, 101, 1);
+            margin-left: 90px;
+            margin-top: 35px;
+        }
+        
+        #blk1 p {
+            font-family: DM Sans;
+            font-size: 35px;
+            font-weight: 700;
+            line-height: 63px;
+            letter-spacing: 0.04em;
+            text-align: left;
+        }
+        
+        #blk2 p {
+            font-family: DM Sans;
+            font-size: 35px;
+            font-weight: 700;
+            line-height: 63px;
+            letter-spacing: 0.04em;
+            text-align: left;
+            color: rgba(255, 255, 255, 1);
+        }
+        
+        #blk3 p {
+            font-family: DM Sans;
+            font-size: 35px;
+            font-weight: 700;
+            line-height: 63px;
+            letter-spacing: 0.04em;
+            text-align: left;
+            color: rgba(255, 255, 255, 1);
+        }
+        
+        .rect p {
+            margin-left: 80px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <nav>
+                <div id="para">DaPPr</div>
+                <div id="mid">
+                    <a href="#">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Information</a>
+                    <a href="#">More</a>
+                    <div class="search">
+                        <input type="search" placeholder="Search..." />
+                        <div class="magni"><img src="./Vector.png" alt="" width="20px"> </div>
+                    </div>
+                </div>
+                <div id="burger">
+                    <img src="./Vector (1).png" alt="" width="35px" />
+                </div>
+            </nav>
+        </div>
+        <div class="box2">
+            <div class="img1">
+                <img src="./image 4.png" alt="" height="300px" />
+            </div>
+            <div class="img2">
+                <pre>
+It's not only writers who can benefit from this free online tool. If </pre
+          >
+        <pre>you're a programmer who's working on a ......</pre>
+            </div>
+            <div class="socials">
+                <div class="icons">
+                    <div class="whats">
+                        <img src="./logos_whatsapp-icon.png" alt="" width="40px" />
+                    </div>
+                    <div class="fb">
+                        <img src="./Vector (3).png" alt="" width="36px" />
+                    </div>
+                    <div class="twit">
+                        <img src="./Vector (5).png" alt="" width="36px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div id="card1">
+                <p>Total Question’s</p>
+                <p>200,000</p>
+            </div>
+            <div id="card2">
+                <p>Total Answer’s</p>
+                <p>105,000</p>
+            </div>
+            <div id="card3">
+                <p>Participated</p>
+                <p>10,000</p>
+            </div>
+            <div id="card4">
+                <p>Total Passed</p>
+                <p>6,000</p>
+            </div>
+        </div>
+        <div class="formcont">
+            <div class="form">
+                <div class="rect">
+                    <div class="blocks" id="blk1">
+                        <p>YOUR INFO</p>
+                    </div>
+                    <div class="blocks" id="blk2">
+                        <p>BOOKMARKS</p>
+                    </div>
+                    <div class="blocks" id="blk3">
+                        <p>SETTINGS</p>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="info">
+                        <p>Your information</p>
+                    </div>
+                    <div class="contact">
+                        <p> <b>Name </b>: Atul Singhal</p>
+                        <p> <b>Email </b>: atul@gmail.com</p>
+                        <p> <b>Phone</b> : +91 8131424888</p>
+                        <p> <b>Marks </b>: 500.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="support">
+                <img src="./Vector (4).png" alt="" width="70px" />
+            </div>
+        </div>
+        <br /> <br> <br> <br> <br /> <br> <br> <br> <br /> <br> <br> <br> <br /> <br> <br> <br> <br /> <br> <br> <br>
+    </div>
+</body>
+
+</html>
+
+</html>
